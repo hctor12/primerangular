@@ -2,17 +2,13 @@ import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { App } from './app';
+import { PrimerComponent } from '../components/primer-component/primer-component';
+import { HooksAngular } from '../components/hooksangular-component/hooksangular-component';
 
 @NgModule({
-  declarations: [
-    App
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [App]
+  declarations: [App, PrimerComponent, HooksAngular],
+  imports: [BrowserModule],
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
