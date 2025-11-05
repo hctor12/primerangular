@@ -1,0 +1,28 @@
+<div>
+  <h1>Tabla Multiplicar</h1>
+  <form
+    (submit)="tablaMultiplicar()"
+    #formTabla="ngForm"
+    style="display: flex; flex-direction: column; width: 300px"
+  >
+    <label> Introduzca número </label>
+    <input type="number" name="cajaNumero" #cajaNumero />
+    <button style="margin-top: 10px">Generar Tabla</button>
+  </form>
+  <table border="1">
+    <thead>
+      <tr style="font-weight: bold">
+        <th>Operación</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (res of resultados; track $index) {
+      <tr>
+        <td>{{ cajaNumeroRef.nativeElement.value }} * {{ $index + 1 }}</td>
+        <td>{{ res }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

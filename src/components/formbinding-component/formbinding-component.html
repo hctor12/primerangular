@@ -1,0 +1,20 @@
+<div>
+  <h1>Form Binding</h1>
+  <h3>{{ mensaje }}</h3>
+  <form
+    #userForm="ngForm"
+    (ngSubmit)="recibirDatos()"
+    style="display: flex; flex-direction: column; width: 300px"
+  >
+    <label>Nombre</label>
+    <input name="cajaNombre" #cajaNombre="ngModel" [(ngModel)]="user.nombre" type="text" />
+    <label>Apellidos</label>
+    <input name="cajaApellidos" #cajaApellidos="ngModel" [(ngModel)]="user.apellidos" type="text" />
+    <label>Edad</label>
+    <input name="cajaEdad" #cajaEdad="ngModel" [(ngModel)]="user.edad" type="number" min="0" />
+    <button style="margin-top: 5px">Enviar datos</button>
+  </form>
+  <h2 style="color: blue">
+    Nombre {{ user.nombre }}, Apellidos: {{ user.apellidos }}, Edad: {{ user.edad }}
+  </h2>
+</div>

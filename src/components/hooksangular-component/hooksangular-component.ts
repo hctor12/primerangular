@@ -5,9 +5,15 @@ import { Component, OnInit, DoCheck } from '@angular/core';
   standalone: false,
   templateUrl: './hooksangular-component.html',
 })
-export class HooksAngular implements OnInit {
+export class HooksAngular {
+  public mensaje: string;
   constructor() {
     console.log('Constructor: Primer método de inicio de Component');
+    this.mensaje = 'Hoy es miércoles';
+  }
+
+  cambiarMensaje(): void {
+    this.mensaje = 'y mañana juernes!!!';
   }
 
   ngOnInit(): void {

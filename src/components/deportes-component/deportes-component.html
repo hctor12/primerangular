@@ -1,0 +1,40 @@
+<div>
+  <h1>Directivas Angular</h1>
+  <ul>
+    @for (num of numbers; track $index) {
+    <!-- <li [style.color]="num % 2 == 0 ? 'green' : 'red'">
+      {{ num }}
+    </li> -->
+    <!-- <li [class.green]="num % 2 == 0" [class.red]="num % 2 != 0">
+      {{ num }}
+    </li> -->
+    <li [ngClass]="num % 2 == 0 ? 'green' : 'red'">
+      {{ num }}
+    </li>
+    }
+  </ul>
+  <h2>Número de deportes: {{ sports.length }}</h2>
+  @if (sports.length < 5) {
+  <div>
+    <p style="color: red">Tienes menos de 5 deportes</p>
+  </div>
+  } @else {
+  <p style="color: green">Tienes 5 o más deportes</p>
+  }
+
+  <p>El primer deporte es {{ sports[0] }}</p>
+  <ul>
+    @for (deporte of sports; track $index) {
+    <li>Index: {{ $index }}, Deporte: {{ deporte }}</li>
+    }
+  </ul>
+</div>
+
+<style>
+  .red {
+    color: red;
+  }
+  .green {
+    color: green;
+  }
+</style>
